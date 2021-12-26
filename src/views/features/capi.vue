@@ -20,6 +20,15 @@
     <!-- ref start -->
     <Ref />
     <!-- ref end -->
+    <h1>Computed Watch</h1>
+    <el-select v-model="componentId">
+      <el-option 
+        v-for="item in options"
+        :key="item.value"
+        :label="item.label"
+        :value="item.value"></el-option>
+    </el-select>
+    <component :is="componentMap[componentId]"></component>
 
   </div>
 </template>
@@ -27,6 +36,8 @@
 <script setup>
   import Setup from './capi/setup.vue'
   import Ref from './capi/ref.vue'
+  import Computed from './capi/computed.vue'
+  import Watch from './capi/watch.vue'
 
   import {
     ref,
@@ -68,6 +79,24 @@
   }
 
   // setup end
+
+  const options = [
+    {
+      label: 'Computed',
+      value: 'Computed'
+    },
+    {
+      label: 'Watch',
+      value: 'Watch'
+    }
+  ]
+
+  const componentMap = {
+    'Computed': Computed,
+    'Watch': Watch
+  }
+
+  const componentId = ref('Computed')
 
   onMounted(() => {
     
