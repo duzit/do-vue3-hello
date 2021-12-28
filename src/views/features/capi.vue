@@ -30,6 +30,9 @@
     </el-select>
     <component :is="componentMap[componentId]"></component>
 
+    <Reactive />
+    <WatchEffect />
+
   </div>
 </template>
 
@@ -38,6 +41,8 @@
   import Ref from './capi/ref.vue'
   import Computed from './capi/computed.vue'
   import Watch from './capi/watch.vue'
+  import Reactive from './capi/reactive.vue'
+  import WatchEffect from './capi/watchEffect.vue'
 
   import {
     ref,
