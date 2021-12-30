@@ -33,6 +33,8 @@
     <Reactive />
     <WatchEffect />
 
+    <ProvideInject />
+
   </div>
 </template>
 
@@ -43,6 +45,8 @@
   import Watch from './capi/watch.vue'
   import Reactive from './capi/reactive.vue'
   import WatchEffect from './capi/watchEffect.vue'
+
+  import ProvideInject from './provide.inject.vue'
 
   import {
     ref,
